@@ -102,24 +102,23 @@ function printQuote (){
                 if (randomQuote.hasOwnProperty(`tag`)) {
                  html += `<span class="tag"> ${randomQuote.tag} </span>`
                 }
-              
-  return html;        
+                 document.getElementById('quote-box').innerHTML = html;    
+
+                  // This function change the background color of the page randomly.
+                  let red = Math.floor(Math.random() * 256);
+                  let green = Math.floor(Math.random() * 256);
+                  let blue = Math.floor(Math.random() * 256);
+                  let randomRGB = `rgb( ${red}, ${green}, ${blue} )`;
+                   document.body.style.backgroundColor = randomRGB;
+                    return html;        
 }
 
 
-// This function change the background color of the page randomly.
-let red = Math.floor(Math.random() * 256);
-let green = Math.floor(Math.random() * 256);
-let blue = Math.floor(Math.random() * 256);
-let randomRGB = `rgb( ${red}, ${green}, ${blue} )`;
- document.body.style.backgroundColor = randomRGB;
 
-// This function refresh the page every 15 seconds (yes I did some digging online because we didn't learn it {https://stackoverflow.com/questions/32913226/auto-refresh-page-every-30-seconds#:~:text=If%20you%20really%20want%20to,(%20function()%20%7B%20window.})
-window.setTimeout( function() {
-  window.location.reload();
-}, 15000);
 
-   document.getElementById('quote-box').innerHTML = printQuote();    
+// This function refresh the page every 15 seconds 
+setInterval(printQuote, 15000);
+
 
 
 /***
