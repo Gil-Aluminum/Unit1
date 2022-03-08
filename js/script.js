@@ -116,7 +116,7 @@ function printQuote (){
 
 
 
-// This function refresh the page every 15 seconds 
+// This function refresh the page every 15 seconds (got help on slack channel from @Rachel Johnson [Thanks Rachel!])
 setInterval(printQuote, 15000);
 
 
